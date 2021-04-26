@@ -12,28 +12,67 @@
     <div class="main-content">
         <div class="wrapper">
             <h1>Manage Admin</h1>
-            <div class="clearfix"></div>
-            <div class="col-4 text-center">
-                <h1>5</h1>
-                <br />
-                Categories
-            </div>
-            <div class="col-4 text-center">
-                <h1>5</h1>
-                <br />
-                Categories
-            </div>
-            <div class="col-4 text-center">
-                <h1>5</h1>
-                <br />
-                Categories
-            </div>
-            <div class="col-4 text-center">
-                <h1>5</h1>
-                <br />
-                Categories
-            </div>
-            <div class="clearfix"></div>
+            <br /><br />
+            <?php 
+                if(isset($_SESSION['add'])){
+                    echo $_SESSION['add'];    //displaying session message
+                    unset($_SESSION['add']);  //removing session message
+                }
+            ?>
+            <br /><br />
+            <a href="./add-admin.php" class="btn-primary">Add Admin</a>
+            <table class="tbl-full">
+                <tr>
+                    <th>
+                        Serial No
+                    </th>
+                    <th>
+                        Full Name
+                    </th>
+                    <th>
+                        User Name
+                    </th>
+                    <th>
+                        Action
+                    </th>
+                </tr>
+                <tr>
+                    <td>adf</td>
+                    <td>adf</td>
+                    <td>adsf</td>
+                    <td>
+                        <a href="#" class="btn-secondary">Update Admin</a>
+                        <a href="#" class="btn-danger">Delete Admin</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>adf</td>
+                    <td>adf</td>
+                    <td>adsf</td>
+                    <td>
+                        <a href="#" class="btn-secondary">Update Admin</a>
+                        <a href="#" class="btn-danger">Delete Admin</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>adf</td>
+                    <td>adf</td>
+                    <td>adsf</td>
+                    <td>
+                        <a href="#" class="btn-secondary">Update Admin</a>
+                        <a href="#" class="btn-danger">Delete Admin</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>adf</td>
+                    <td>adf</td>
+                    <td>adsf</td>
+                    <td>
+                        <a href="#" class="btn-secondary">Update Admin</a>
+                        <a href="#" class="btn-danger">Delete Admin</a>
+                    </td>
+                </tr>
+            </table>
         </div>
     </div>
 

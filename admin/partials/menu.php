@@ -1,3 +1,4 @@
+<?php include('../config/constant.php'); ?>
 <div class="menu">
     <div class="wrapper text-center">
         <ul>

@@ -63,3 +63,58 @@ a{
     clear: both;
     float: none;
 }
+
+.tbl-full{
+    margin: 10px 0;
+    width: 100%;
+}
+
+.tbl-30{
+    width: 30%;
+}
+
+table tr th{
+    border-bottom: 1px solid grey;
+    padding: 1%;
+    text-align: left;
+}
+
+table tr td{
+    padding: 1%;
+}
+
+.btn-primary{
+    background-color: #1e90ff;
+    text-align: center;
+    padding: 1%;
+    color: white;
+    font-weight: bold;
+}
+
+.btn-secondary{
+    background-color: #7bed9f;
+    text-align: center;
+    padding: 1%;
+    color: black;
+    font-weight: bold;
+}
+
+.btn-danger{
+    background-color: #ff6b81;
+    text-align: center;
+    padding: 1%;
+    color: white;
+    font-weight: bold;
+}
+
+.btn-primary:hover{
+    background-color: #3742fa;
+}
+
+.btn-secondary:hover{
+    background-color: #2ed573;
+}
+
+.btn-danger:hover{
+    background-color: #ff4757; 
+}
