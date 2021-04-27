@@ -14,6 +14,11 @@ if (isset($_SESSION['login'])) {
     unset($_SESSION['login']);
 }
 
+if (isset($_SESSION['no-login'])) {
+    echo $_SESSION['no-login'];
+    unset($_SESSION['no-login']);
+}
+
 ?>
         <h1>Log In</h1>
 
@@ -56,6 +61,7 @@ if (isset($_POST['submit'])) {
     if ($count == 1) {
         // User Available
         $_SESSION['login'] = "<div class='success'>Logged In...</div>";
+        $_SESSION['user'] = $username; // Check if user is logged in or out.
         header("location:" . SITEURL . "admin/");
     } else {
         // User Unavailable
