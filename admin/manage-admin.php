@@ -28,6 +28,21 @@
                     echo $_SESSION['update'];
                     unset($_SESSION['update']);
                 }
+
+                if (isset($_SESSION['user_not_found'])){
+                    echo $_SESSION['user_not_found'];
+                    unset($_SESSION['user_not_found']);
+                }
+
+                if (isset($_SESSION['not_matched'])){
+                    echo $_SESSION['not_matched'];
+                    unset($_SESSION['not_matched']);
+                }
+
+                if (isset($_SESSION['update_password'])){
+                    echo $_SESSION['update_password'];
+                    unset($_SESSION['update_password']);
+                }
             ?>
             <br /><br />
 
@@ -70,6 +85,8 @@
                     <td><?php echo $full_name; ?></td>
                     <td><?php echo $user_name; ?></td>
                     <td>
+                        <a href="<?php echo SITEURL;?>admin/update-password.php?id=<?php echo $id; ?>"
+                            class="btn-primary">Change Password</a>
                         <a href="<?php echo SITEURL;?>admin/update-admin.php?id=<?php echo $id; ?>"
                             class="btn-secondary">Update Admin</a>
                         <a href="<?php echo SITEURL;?>admin/delete-admin.php?id=<?php echo $id; ?>"
