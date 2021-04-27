@@ -1,4 +1,4 @@
-<?php include('../config/constant.php'); ?>
+<?php include '../config/constant.php';?>
 <div class="menu">
     <div class="wrapper text-center">
         <ul>
@@ -7,6 +7,7 @@
             <li><a href="manage-category.php">Category</a></li>
             <li><a href="manage-food.php">Food</a></li>
             <li><a href="manage-order.php">Order</a></li>
+            <li><a href="logout.php">Log Out</a></li>
         </ul>
     </div>
 </div>
