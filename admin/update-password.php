@@ -67,9 +67,6 @@
         if ($res == TRUE){
             // User exists and password can be changed.
             // Check new password with confirmed password.
-            // echo $new_password;
-            // echo $confirmed_password;
-            // echo $confirmed_password+"<br/>";
 
             if ($new_password == $confirmed_password){
                 // Update the password

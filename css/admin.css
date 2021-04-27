@@ -126,3 +126,11 @@ table tr td{
 .failure{
     color:#ff4757;
 }
+
+/* CSS for Login */
+.login{
+    width: 20%;
+    border: 1px solid grey;
+    margin: 5% auto;
+    padding: 2%;
+}
