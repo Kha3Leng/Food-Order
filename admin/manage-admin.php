@@ -18,9 +18,21 @@
                     echo $_SESSION['add'];    //displaying session message
                     unset($_SESSION['add']);  //removing session message
                 }
+
+                if(isset($_SESSION['delete'])){
+                    echo $_SESSION['delete'];
+                    unset($_SESSION['delete']);
+                }
+
+                if(isset($_SESSION['update'])){
+                    echo $_SESSION['update'];
+                    unset($_SESSION['update']);
+                }
             ?>
             <br /><br />
+
             <a href="./add-admin.php" class="btn-primary">Add Admin</a>
+            <br /> <br />
             <table class="tbl-full">
                 <tr>
                     <th>
@@ -36,42 +48,41 @@
                         Action
                     </th>
                 </tr>
+                <?php 
+                    $sql = "SELECT * FROM tbl_admin";
+                    $res = mysqli_query($conn, $sql);
+
+                    if ($res){
+                        $count = mysqli_num_rows($res);
+                        $sn = 1;            //serial number incremented row by row, used it instaed of $id
+                        if ($count > 0){
+                            //we have admin data in databases
+                            while($rows  = mysqli_fetch_assoc($res)){
+                                // retrieve data from databases;
+                                $id = $rows['id'];
+                                $full_name = $rows['full_name'];
+                                $user_name = $rows['username'];
+
+                                //display the values in the table
+                                ?>
                 <tr>
-                    <td>adf</td>
-                    <td>adf</td>
-                    <td>adsf</td>
+                    <td><?php echo $id; ?></td>
+                    <td><?php echo $full_name; ?></td>
+                    <td><?php echo $user_name; ?></td>
                     <td>
-                        <a href="#" class="btn-secondary">Update Admin</a>
-                        <a href="#" class="btn-danger">Delete Admin</a>
+                        <a href="<?php echo SITEURL;?>admin/update-admin.php?id=<?php echo $id; ?>"
+                            class="btn-secondary">Update Admin</a>
+                        <a href="<?php echo SITEURL;?>admin/delete-admin.php?id=<?php echo $id; ?>"
+                            class="btn-danger">Delete Admin</a>
                     </td>
                 </tr>
-                <tr>
-                    <td>adf</td>
-                    <td>adf</td>
-                    <td>adsf</td>
-                    <td>
-                        <a href="#" class="btn-secondary">Update Admin</a>
-                        <a href="#" class="btn-danger">Delete Admin</a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>adf</td>
-                    <td>adf</td>
-                    <td>adsf</td>
-                    <td>
-                        <a href="#" class="btn-secondary">Update Admin</a>
-                        <a href="#" class="btn-danger">Delete Admin</a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>adf</td>
-                    <td>adf</td>
-                    <td>adsf</td>
-                    <td>
-                        <a href="#" class="btn-secondary">Update Admin</a>
-                        <a href="#" class="btn-danger">Delete Admin</a>
-                    </td>
-                </tr>
+                <?php
+                            }
+                        }else{
+                            //we dont' have  admin data in databases
+                        }
+                    }
+                ?>
             </table>
         </div>
     </div>
