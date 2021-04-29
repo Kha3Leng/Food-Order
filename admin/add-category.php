@@ -59,7 +59,7 @@
                         // print_r for displaying array()
                         // print_r($_FILES['image']['name']);
                         
-                        if(isset($_FILES['image']['name'])){
+                        if(isset($_FILES['image']['name']) && $_FILES['image']['name'] != ''){
                             // Upload the image
                             // To upload image, we need image name, source path and detination path
                             echo $image_name = $_FILES['image']['name'];
@@ -88,7 +88,7 @@
                             }
                         }else{
                             // don't upload image and set image_name as null
-                            $image_name = "hello";
+                            $image_name = "";
                         }
 
                         // Check if radio btn is checked

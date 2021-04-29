@@ -1,5 +1,11 @@
 <?php include '../config/constant.php';?>
 <?php include 'login-check.php';?>
+<html>
+<head>
+    <title>Food Order</title>
+    <link type="stylesheet" rel="../admin/css/admin.css"/>
+</head>
+<body>
 <div class="menu">
     <div class="wrapper text-center">
         <ul>
