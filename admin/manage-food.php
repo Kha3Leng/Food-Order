@@ -21,6 +21,16 @@
                     echo $_SESSION['add'];
                     unset($_SESSION['add']);
                 }
+
+                if(isset($_SESSION['delete'])){
+                    echo $_SESSION['delete'];
+                    unset($_SESSION['delete']);
+                }
+
+                if(isset($_SESSION['remove'])){
+                    echo $_SESSION['remove'];
+                    unset($_SESSION['remove']);
+                }
             ?>
             <br /><br /><br/>
             <a href="<?php echo SITEURL;?>admin/add-food.php" class="btn-primary">Add Food</a>
