@@ -31,6 +31,21 @@
                     echo $_SESSION['remove'];
                     unset($_SESSION['remove']);
                 }
+
+                if(isset($_SESSION['no-data'])){
+                    echo $_SESSION['no-data'];
+                    unset($_SESSION['no-data']);
+                }
+
+                if(isset($_SESSION['update'])){
+                    echo $_SESSION['update'];
+                    unset($_SESSION['update']);
+                }
+
+                if(isset($_SESSION['delete-img'])){
+                    echo $_SESSION['delete-img'];
+                    unset($_SESSION['delete-img']);
+                }
             ?>
             <br /><br /><br/>
             <a href="<?php echo SITEURL;?>admin/add-food.php" class="btn-primary">Add Food</a>
@@ -107,7 +122,7 @@
                                 <td><?php echo $featured; ?></td>
                                 <td><?php echo $active; ?></td>
                                 <td>
-                                    <a href="#" class="btn-secondary">Update Admin</a>
+                                    <a href="<?php echo SITEURL; ?>admin/update-food.php?id=<?php echo $id; ?>" class="btn-secondary">Update Admin</a>
                                     <a href="<?php echo SITEURL; ?>admin/delete-food.php?id=<?php echo $id;?>&image_name=<?php echo $image_name;?>" class="btn-danger">Delete Admin</a>
                                 </td>
                             </tr>
