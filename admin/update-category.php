@@ -109,13 +109,13 @@
 
                 // Update new image if selected
                 // Check if new image is uploaded?
-                echo $current_image;
-                print_r($_FILES['image']);
-                print_r(isset($_FILES['image']['name']));
-                print_r($_FILES['image']['name'] != '');
+                // echo $current_image;
+                // print_r($_FILES['image']);
+                // print_r(isset($_FILES['image']['name']));
+                // print_r($_FILES['image']['name'] != '');
                 // die();
                 if(isset($_FILES['image']['name']) && $_FILES['image']['name'] != ''){
-                    echo $image_name = $_FILES['image']['name'];
+                    $image_name = $_FILES['image']['name'];
                     // Auto Renaming 
                     // Get extension of our image (jpg, png, etc..)
                     $ext = end(explode('.', $image_name));
@@ -124,11 +124,16 @@
                     $image_name = 'Food_category_'.rand(000,999).'.'.$ext;
 
 
-                    echo $src_path = $_FILES['image']['tmp_name'];
-                    echo $des_path = "../images/category/".$image_name;
+                    $src_path = $_FILES['image']['tmp_name'];
+                    $des_path = "../images/category/".$image_name;
                     
-                    // Finally upload
-                    echo $upload = move_uploaded_file($src_path, $des_path);
+                    // Finally upload\\
+                    $upload = move_uploaded_file($src_path, $des_path);
+                    // chmod -Rf 777 FOLDER_PATH
+                    echo var_dump($upload);
+                    echo "hello";
+                    echo $image_name;
+                    echo $current_image;
 
                     // Check upload success
                     if (!$upload){
