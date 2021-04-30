@@ -151,16 +151,6 @@
             $featured = $_POST['featured'];
             $active = $_POST['active'];
             
-            if ($current_image != ''){
-                $path = "../images/food/".$current_image;
-                $remove = unlink($path);
-                if($remove == false){
-                    $_SESSION['delete-img'] = "<div class='failure'>Failed to delete image</div>";
-                    header("location:".SITEURL."admin/manage-food.php");
-                    die();
-                    exit();
-                }
-            }
             // print_r($_FILES['new_image']);
             if ($_FILES['new_image']['name'] != ''){
                 $image_name = $_FILES['new_image']['name'];
@@ -175,8 +165,23 @@
                     die();
                     exit();
                 }
+                // echo "hello";
+                // echo var_dump($image_name);
+                // die();
+                if ($current_image != ''){
+                    $path = "../images/food/".$current_image;
+                    $remove = unlink($path);
+                    if($remove == false){
+                        $_SESSION['delete-img'] = "<div class='failure'>Failed to delete image</div>";
+                        header("location:".SITEURL."admin/manage-food.php");
+                        die();
+                        exit();
+                    }
+                }else{
+                    $image_name = $image_name;
+                }
             }else{
-                $image_name = '';
+                $image_name = $current_image;
             }
 
             if(isset($_POST['featured'])){
