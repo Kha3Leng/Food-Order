@@ -257,3 +257,15 @@ fieldset{
         width: 100%;
     }
 }
+
+.success{
+    padding: 2%;
+    margin: 0 auto;
+    color: green;
+}
+
+.failure{
+    padding: 2%;
+    margin: 0 auto;
+    color: red;
+}
